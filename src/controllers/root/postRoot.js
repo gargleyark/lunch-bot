@@ -4,8 +4,17 @@
  * @param {import('express').Response} res 
  */
 const postRoot = (req, res) => {
-    const json = req.body
-    res.json(json)
+    const restaurant = getRandomRestaurant()
+
+    const reqBody = req.body
+
+    axios.post(`https://hooks.slack.com/services/${process.env.WEBHOOK}`, {
+        text: `How about ${restaurant.name}? They serve ${restaurant.type} food and are only ${restaurant.distance} away. ${restaurant.links ? `<https://goo.gl/maps/${restaurant.links.google}|More info here>` : ''}${JSON.stringify(reqBody)}`,
+        username: 'lunchbot',
+        icon_emoji: ":gravyboatboatjeff:"
+    })
+
+    res.status(200).send('I have send a recommendation to #pints-or-lunch')
 }
 
 export default postRoot
