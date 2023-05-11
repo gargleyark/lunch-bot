@@ -1,3 +1,6 @@
+import axios from 'axios';
+import { getRandomRestaurant } from '../../utils/food'
+
 /**
  * Echo endpoint
  * @param {import('express').Request} req 
