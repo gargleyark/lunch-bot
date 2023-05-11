@@ -1,6 +1,6 @@
 export const restaurants = [
     {
-        name: 'Test restaurant',
+        name: 'The Test Restaurant',
         type: 'pub',
         rating: '5',
         distance: 'a 5 minute walk',
