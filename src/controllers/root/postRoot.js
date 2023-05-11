@@ -16,7 +16,7 @@ const postRoot = (req, res) => {
     const channel = directMessage ? `@${reqBody.user_name}` : `#${reqBody.channel}`
 
     axios.post(`https://hooks.slack.com/services/${process.env.WEBHOOK}`, {
-        text: `${reqBody.user_name} is hungry. How about ${restaurant.name}? They serve ${restaurant.type} food and are only ${restaurant.distance} away. ${restaurant.links ? `<https://goo.gl/maps/${restaurant.links.google}|More info here>` : ''}${JSON.stringify(reqBody)}`,
+        text: `${reqBody.user_name} is hungry. How about ${restaurant.name}? They serve ${restaurant.type} food and are only ${restaurant.distance} away. ${restaurant.links ? `<https://goo.gl/maps/${restaurant.links.google}|More info here>` : ''}`,
         username: 'lunchbot',
         icon_emoji: ":gravyboatboatjeff:",
         channel,
