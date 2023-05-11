@@ -17,7 +17,7 @@ const postRoot = (req, res) => {
         icon_emoji: ":gravyboatboatjeff:",
     })
 
-    res.status(200).send('I have send a recommendation to #pints-or-lunch')
+    res.status(200).send('I have sent a recommendation to #pints-or-lunch')
 }
 
 export default postRoot
