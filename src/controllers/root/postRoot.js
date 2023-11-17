@@ -1,5 +1,5 @@
-import axios from "axios";
-import { getRandomRestaurant, getRestaurantNames } from "../../utils/food";
+import axios from 'axios'
+import { getRandomRestaurant, getRestaurantNames } from '../../utils/food'
 
 /**
  * Echo endpoint
@@ -7,11 +7,11 @@ import { getRandomRestaurant, getRestaurantNames } from "../../utils/food";
  * @param {import('express').Response} res
  */
 const postRoot = (req, res) => {
-  const restaurant = getRandomRestaurant();
+  const restaurant = getRandomRestaurant()
 
-  const reqBody = req.body;
-  const isPrivate = reqBody.text.match(/private/);
-  const showAll = reqBody.text.match(/all/);
+  const reqBody = req.body
+  const isPrivate = reqBody.text.match(/private/)
+  const showAll = reqBody.text.match(/all/)
 
   const data = {
     text: `:wave: ${reqBody.user_name} is hungry. How about *${
@@ -21,24 +21,24 @@ const postRoot = (req, res) => {
     } away. ${
       restaurant.links
         ? `<https://goo.gl/maps/${restaurant.links.google}|More info here>`
-        : ""
+        : ''
     }`,
-  };
+  }
 
   if (showAll) {
     data.text = `:wave: ${
       reqBody.user_name
     } has asked for all the restaurants! Here are the options:\n${getRestaurantNames().join(
-      "\n"
-    )}`;
+      '\n'
+    )}`
   }
 
   if (!isPrivate) {
     axios.post(`https://hooks.slack.com/services/${process.env.WEBHOOK}`, {
       ...data,
-      username: "lunchbot",
-      icon_emoji: ":gravyboatboatjeff:",
-    });
+      username: 'lunchbot',
+      icon_emoji: ':gravyboatboatjeff:',
+    })
   }
 
   res
@@ -47,9 +47,9 @@ const postRoot = (req, res) => {
       isPrivate
         ? data.text
         : `I have sent a ${
-            showAll ? "list" : "recommendation"
+            showAll ? 'list' : 'recommendation'
           } to #pints-or-lunch`
-    );
-};
+    )
+}
 
-export default postRoot;
+export default postRoot
