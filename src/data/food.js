@@ -30,7 +30,7 @@ export const restaurants = [
   },
   {
     name: 'Duke of Kendal',
-    type: 'pub food',
+    type: 'pub food and also salmon for masha',
     rating: '4',
     distance: 'a 5 minute walk',
     links: {
@@ -154,5 +154,11 @@ export const restaurants = [
     links: {
       google: 'YsfzpWvReg8Aa3Nu7',
     },
+  },
+  {
+    name: 'The Swan',
+    distance: 'near hyde park',
+    type: 'pub food probably',
+    rating: "don't know",
   },
 ]
