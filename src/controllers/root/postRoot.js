@@ -42,20 +42,22 @@ const postRoot = (req, res) => {
   }
 
   if (!isPrivate) {
-    // axios.post(`https://hooks.slack.com/services/${process.env.WEBHOOK}`, {
-    //   ...data,
-    //   username: 'lunchbot',
-    //   icon_emoji: ':gravyboatboatjeff:',
-    // })
+    axios.post(`https://hooks.slack.com/services/${process.env.WEBHOOK}`, {
+      ...data,
+      username: 'lunchbot',
+      icon_emoji: ':gravyboatboatjeff:',
+    })
   }
 
-  res.status(200).send(
-    // isPrivate
-    data.text // ?
-    // : `I have sent a ${
-    //     showAll ? 'list' : 'recommendation'
-    //   } to #pints-or-lunch`
-  )
+  res
+    .status(200)
+    .send(
+      isPrivate
+        ? data.text
+        : `I have sent a ${
+            showAll ? 'list' : 'recommendation'
+          } to #pints-or-lunch`
+    )
 }
 
 export default postRoot
