@@ -159,6 +159,18 @@ export const restaurants = [
     name: 'The Swan',
     distance: 'near hyde park',
     type: 'pub food probably',
-    rating: "don't know",
+    rating: "don't know but it's fullers so probably alright",
+  },
+  {
+    name: 'The Victoria (paddington)',
+    distance: '5 minutes',
+    type: 'pub food probably',
+    rating: "don't know but it's fullers so probably alright",
+  },
+  {
+    name: 'Alley Cats Pizza',
+    distance: 'about 10 minutes',
+    type: 'pizza',
+    rating: '4',
   },
 ]
