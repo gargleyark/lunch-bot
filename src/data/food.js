@@ -21,7 +21,7 @@ export const restaurants = [
   {
     name: 'Duke of York',
     type: 'pub food',
-    rating: '4',
+    rating: '2',
     comments: ['Good guiness.'],
     distance: 'a 5 minute walk',
     links: {
@@ -38,10 +38,16 @@ export const restaurants = [
     },
   },
   {
+    name: 'Duke of Wellington',
+    type: 'pub food in a very small bar',
+    rating: '4',
+    distance: 'a 10 minute walk',
+  },
+  {
     name: 'Pickled Hen',
     type: 'pub food',
     distance: 'just over the road',
-    rating: '3.5',
+    rating: '3',
     links: {
       google: 'j5CjUMeQVZFCJbDy9',
     },
@@ -54,6 +60,7 @@ export const restaurants = [
     links: {
       google: 'JFjCw5oKyVCosBYT9',
     },
+    keywords: ['pizzawithpinapple'],
   },
   {
     name: 'Nep Nep',
@@ -67,7 +74,7 @@ export const restaurants = [
     name: 'Lord Wargrave',
     type: 'overrated pub food/burger',
     distance: 'a 5 minute walk',
-    rating: '5',
+    rating: '4',
     links: {
       google: 'GTqWmVp57wS1mq429',
     },
@@ -149,7 +156,7 @@ export const restaurants = [
   {
     name: "Nando's",
     distance: 'about 10 minutes',
-    type: 'nandos',
+    type: 'nandos obviously',
     rating: '6',
     links: {
       google: 'YsfzpWvReg8Aa3Nu7',
@@ -172,5 +179,23 @@ export const restaurants = [
     distance: 'about 10 minutes',
     type: 'pizza',
     rating: '4',
+  },
+  {
+    name: 'They Marylebone Corner',
+    distance: 'about 5 minutes',
+    type: "just coffee, I don't know why you'd go for lunch here",
+    rating: '3',
+  },
+  {
+    name: "Eddie's Cafe",
+    distance: 'about 5 minutes',
+    type: 'cheapish sandwiches',
+    rating: '3.5',
+  },
+  {
+    name: 'CoCoIchibanya',
+    distance: 'about 10 minutes near Bond Street',
+    type: 'curry',
+    rating: '3.5',
   },
 ]

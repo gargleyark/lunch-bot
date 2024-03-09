@@ -21,16 +21,20 @@ const postRoot = (req, res) => {
     ? getRestaurantFromSearch(searchTerms)
     : getRandomRestaurant()
 
+  if (!restaurant) {
+    res.status(200).send(`No restaurants found for "${searchTerms}"`)
+    return
+  }
+
   const data = {
-    text: `:wave: ${reqBody.user_name} is hungry${
+    text: `:wave: ${reqBody.user_name
+      .split('.')[0]
+      .replace(/michael/, 'Mike')
+      .replace(/^./, (char) => char.toUpperCase())} is hungry${
       searchTerms ? ` and searched for ${searchTerms}` : ''
-    }. How about *${restaurant.name}*? They serve ${
+    }.\n\nHow about *${restaurant.name}*? They serve ${
       restaurant.type
-    } and are only ${restaurant.distance} away. ${
-      restaurant.links
-        ? `<https://goo.gl/maps/${restaurant.links.google}|More info here>`
-        : ''
-    }`,
+    } and are only ${restaurant.distance} away.`,
   }
 
   if (showAll) {
